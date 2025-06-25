@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WolfAndSheep.Model
 {
-    public interface IBoard
+    public class Movement
     {
         
     }
