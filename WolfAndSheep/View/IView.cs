@@ -5,6 +5,11 @@ using System.Threading.Tasks;
 
 namespace WolfAndSheep.View
 {
+    /// <summary>
+    /// Interface for the view in the Wolf and Sheep game.
+    /// This interface defines methods for displaying various game-related 
+    /// information to the user.
+    /// </summary>
     public interface IView
     {
         public void DisplayWelcomeSign();

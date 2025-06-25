@@ -18,7 +18,7 @@ namespace WolfAndSheep.Model
         public bool ValidSquare()
         {
             //Valid positions for players (Just dark sqaures)
-            return (Row + Column) % 2 == 0;
+            return (Row + Column) % 2 != 0;
 
         }
         //So they can be used as keys in dictionaries or hash sets
@@ -41,12 +41,24 @@ namespace WolfAndSheep.Model
         {
             return !(left == right);
         }*/
-        //too similar to certain shogi code, so we will not use it
+        //too similar to certain shogi code VS showed, so we will not use it
 
-        
+        /// <summary>
+        /// Adds a PlayerDirection to a BoardPosition.
+        /// custom + operator
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="direction"></param>
+        /// <returns></returns>
+        public static BoardPosition operator +(BoardPosition position, PlayerDirection direction)
+        {
+            return new BoardPosition(position.Row + direction.ChangeRow, position.Column + direction.ChangeColumn);
+        }
+
         public override string ToString()
         {
             return $"({Row}, {Column})";
         }
+         
     }
 }
