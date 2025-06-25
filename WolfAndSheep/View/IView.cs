@@ -17,5 +17,6 @@ namespace WolfAndSheep.View
         public void DisplayRules();
         public void DisplayInstructions();
         public void DisplayBoard();
+        public string AskForMenuChoice();
     }
 }

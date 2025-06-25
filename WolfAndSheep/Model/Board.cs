@@ -109,6 +109,6 @@ namespace WolfAndSheep.Model
             // Add wolf piece to the board
             SetPosition(new BoardPosition(0, 1), new Wolf(PlayerType.Wolf));
         }
-        
+
     }
 }

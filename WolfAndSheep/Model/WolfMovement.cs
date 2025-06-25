@@ -5,36 +5,47 @@ using System.Threading.Tasks;
 
 namespace WolfAndSheep.Model
 {
-    public class WolfMovement : IMovement
+    public class WolfMovement : Wolf, IMovement
     {
         /// <summary>
-        /// Represents the movement of a sheep on the board.
+        /// Represents the movement of the wolf on the board.
         /// Implements the IMovement interface.
         /// Uses Programming a Chess Game in C# | Part 5 by OttoBotCode on YouTube as a reference.
         /// </summary>
 
-            public BoardPosition FromPos { get; }
-            public BoardPosition ToPos { get; }
+        public BoardPosition FromPos { get; }
+        public BoardPosition ToPos { get; }
 
-            public WolfMovement(BoardPosition from, BoardPosition to)
-            {
-                FromPos = from;
-                ToPos = to;
-            }
-            //Used ai assistance to complete the only moves sheep can make.
-            public void Move(Board board)
-            {
-                PlayerPiece piece = board.GetPiece(FromPos.Row, FromPos.Column);
-
-                //Check if destination is valid
-                if (board.GetPiece(ToPos.Row, ToPos.Column) != null)
-                {
-                    throw new InvalidOperationException($"Target position {ToPos} is already occupied.");
-                }
-
-                board.SetPiece(ToPos.Row, ToPos.Column, piece);
-                board.SetPiece(FromPos.Row, FromPos.Column, piece);
-                piece.HasMoved = true;
-            }
+        public WolfMovement(BoardPosition from, BoardPosition to, PlayerType colour) : base(colour)
+        {
+            FromPos = from;
+            ToPos = to;
         }
+        //Used same ai assisted code to complete the only moves wolf can make.
+        public void Move(Board board)
+        {
+            
+            
+
+            PlayerPiece piece = board.GetPiece(FromPos.Row, FromPos.Column);
+
+
+            // Check if destination is valid
+            if (board.GetPiece(ToPos.Row, ToPos.Column) != null)
+            {
+                throw new InvalidOperationException($"Target position {ToPos} is already occupied.");
+                
+            }
+            //If wolf cant move from its position to another, game is over.
+            if (FromPos.Equals(ToPos))
+            {
+                throw new InvalidOperationException($"Game ends.");
+
+            }
+
+            board.SetPiece(ToPos.Row, ToPos.Column, piece);
+            board.SetPiece(FromPos.Row, FromPos.Column, null);
+            piece.HasMoved = true;
+        }
+    }
 }

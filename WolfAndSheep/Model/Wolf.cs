@@ -9,7 +9,7 @@ namespace WolfAndSheep.Model
     {
         public override PlayerType Type => PlayerType.Wolf;
         public override PlayerType Colour { get; }
-        private static readonly PlayerDirection [] dir = new PlayerDirection[]
+        protected static readonly PlayerDirection [] dir = new PlayerDirection[]
         {
             PlayerDirection.NorthEast,
             PlayerDirection.NorthWest,

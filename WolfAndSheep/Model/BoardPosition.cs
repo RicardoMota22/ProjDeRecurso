@@ -54,6 +54,11 @@ namespace WolfAndSheep.Model
         {
             return new BoardPosition(position.Row + direction.ChangeRow, position.Column + direction.ChangeColumn);
         }
+        public bool IsValid()
+        {
+            // Check if the position is within the bounds of the board
+            return Row >= 0 && Row < 8 && Column >= 0 && Column < 8 && ValidSquare();
+        }
 
         public override string ToString()
         {

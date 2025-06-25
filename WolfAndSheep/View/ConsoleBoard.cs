@@ -10,7 +10,7 @@ namespace WolfAndSheep.View
     public class ConsoleBoard : IView
     {
         //Create Chess like board (8x8) using Console.Spectre
-        
+
         //Display Title of the game
         public void DisplayWelcomeSign()
         {
@@ -44,7 +44,8 @@ namespace WolfAndSheep.View
         }
         public void DisplayInstructions()
         {
-            
+            AnsiConsole.MarkupLine($"[bold yellow]Write the positions of where you want to place Piece[/]");
+            AnsiConsole.MarkupLine($"[bold yellow]Example: A1, B2, C3, D4[/]");
         }
 
         //Display the board
@@ -95,11 +96,25 @@ namespace WolfAndSheep.View
                 table.AddRow(squares);
 
             }
-
             //Hides the headers of the table
             table.HideHeaders();
             //Renders the board
             AnsiConsole.Write(table);
+        }
+
+        public string AskForMenuChoice()
+        {
+            List<string> options = new List<string>
+                {
+                    "Play Wolf and Sheep",
+                    "Exit"
+                };
+
+            return AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("[bold]Select an option[/]")
+                    .AddChoices(options)
+            );
         }
     }
 }
