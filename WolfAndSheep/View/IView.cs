@@ -7,6 +7,10 @@ namespace WolfAndSheep.View
 {
     public interface IView
     {
-        
+        public void DisplayWelcomeSign();
+        public void DisplayMessage(string message);
+        public void DisplayRules();
+        public void DisplayInstructions();
+        public void DisplayBoard();
     }
 }
