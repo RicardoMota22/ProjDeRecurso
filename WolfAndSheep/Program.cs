@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Spectre.Console;
+using Spectre.Console.Rendering;
 
 namespace WolfAndSheep
 {
@@ -9,6 +10,7 @@ namespace WolfAndSheep
         private static void Main(string[] args)
         {
             Console.WriteLine("Hello LP1!");
+
             var table = new Table();
 
             //Add columns to the table
@@ -31,30 +33,31 @@ namespace WolfAndSheep
                 table.AddRow("", "", "", "", "", "", "", "");
 
                 //Check with squares are dark or light
-                
+                var squares = new List<IRenderable>();
                 for (int col = 0; col < 8; col++)
                 {
-                    if ((row + col) % 2 == 0) //Checks if sum is even
+                    if ((row + col) % 2 != 0) //Checks if sum is odd
                     {
                         //Dark square
-                        Console.Write("D");
-
+                        bool isDarkSquare = true;
+                        var squareColour = isDarkSquare ? "grey" : "white";
+                        squares.Add(new Markup($"[grey on {squareColour}]    [/]").Centered());
                     }
                     else
                     {
                         //Light square
-                        Console.Write("L");
-
+                        squares.Add(new Markup("[white on white]    [/]").Centered());
                     }
                 }
+                table.AddRow(squares);
+                
             }
 
             //Hides the headers of the table
             table.HideHeaders();
             //Renders the board
             AnsiConsole.Write(table);
-        
-            
+
 
 
         }

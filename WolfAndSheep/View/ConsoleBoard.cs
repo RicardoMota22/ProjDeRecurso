@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Spectre.Console;
+using Spectre.Console.Rendering;
 
 namespace WolfAndSheep.View
 {
@@ -69,22 +70,24 @@ namespace WolfAndSheep.View
                 table.AddRow("", "", "", "", "", "", "", "");
 
                 //Check with squares are dark or light
-                
+                var squares = new List<IRenderable>();
                 for (int col = 0; col < 8; col++)
                 {
-                    if ((row + col) % 2 == 0) //Checks if sum is even
+                    if ((row + col) % 2 != 0) //Checks if sum is odd
                     {
                         //Dark square
-                        Console.Write("D");
-
+                        bool isDarkSquare = true;
+                        var squareColour = isDarkSquare ? "grey" : "white";
+                        squares.Add(new Markup($"[grey on {squareColour}]    [/]").Centered());
                     }
                     else
                     {
                         //Light square
-                        Console.Write("L");
-
+                        squares.Add(new Markup("[white on white]    [/]").Centered());
                     }
                 }
+                table.AddRow(squares);
+                
             }
 
             //Hides the headers of the table
