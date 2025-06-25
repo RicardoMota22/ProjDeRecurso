@@ -7,6 +7,9 @@ namespace WolfAndSheep.Model
 {
     public class Sheep : PlayerPiece
     {
+        /// <summary>
+        /// Represents a sheep player piece in the game.
+        /// </summary>
         public override PlayerType Type => PlayerType.Sheep;
         public override PlayerType Colour { get; }
         private static readonly PlayerDirection [] dir = new PlayerDirection[]

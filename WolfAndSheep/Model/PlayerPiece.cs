@@ -14,6 +14,7 @@ namespace WolfAndSheep.Model
         public abstract PlayerType Type { get; }
         public abstract PlayerType Colour { get; }
         public bool HasMoved { get; set; } = false;
+        
 
 
     }

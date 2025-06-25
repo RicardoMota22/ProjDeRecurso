@@ -70,7 +70,7 @@ namespace WolfAndSheep.Model
             //add case where other piece is in position
             if (pieces[position.Row, position.Column] != null)
             {
-                throw new InvalidOperationException("Piece at the specified position.");
+                throw new InvalidOperationException($"Piece at the specified position{position.Row},{position.Column}.");
             }
 
             return pieces[position.Row, position.Column];
