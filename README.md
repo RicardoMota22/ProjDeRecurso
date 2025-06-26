@@ -103,6 +103,7 @@ classDiagram
     Board *-- PlayerPiece
     Board *-- BoardPosition
     PlayerType ..> PlayerPiece
+    Board ..> PlayerDirection
 
 
 
