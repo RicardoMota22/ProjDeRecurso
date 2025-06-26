@@ -97,6 +97,9 @@ classDiagram
     WolfMovement ..> BoardPosition
     SheepMovement ..> BoardPosition
 
+    BoardController ..> IView
+    BoardController ..> Board
+
 
 
 ```
