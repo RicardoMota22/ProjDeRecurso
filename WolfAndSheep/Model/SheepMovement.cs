@@ -9,7 +9,8 @@ namespace WolfAndSheep.Model
     /// <summary>
     /// Represents the movement of a sheep on the board.
     /// Implements the IMovement interface.
-    /// Uses Programming a Chess Game in C# | Part 5 by OttoBotCode on YouTube as a reference.
+    /// Uses Programming a Chess Game in C# | Part 5 by OttoBotCode 
+    /// on YouTube as a reference.
     /// </summary>
     public class SheepMovement : IMovement
     {

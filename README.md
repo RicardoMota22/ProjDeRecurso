@@ -94,6 +94,10 @@ classDiagram
 
     IView <|.. ConsoleBoard
 
+    WolfMovement ..> BoardPosition
+    SheepMovement ..> BoardPosition
+
+
 
 ```
 
