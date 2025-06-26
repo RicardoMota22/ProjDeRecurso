@@ -76,11 +76,23 @@ classDiagram
         
     }
 
+    class ConsoleBoard {
+        
+    }
+    class IView {
+        
+    }
+    class BoardController {
+        
+    }
+
     PlayerPiece <|-- Sheep
     PlayerPiece <|-- Wolf
 
     IMovement <|.. SheepMovement
     IMovement <|.. WolfMovement
+
+    IView <|.. ConsoleBoard
 
 
 ```
