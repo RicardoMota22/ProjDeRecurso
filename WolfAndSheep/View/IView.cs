@@ -18,5 +18,6 @@ namespace WolfAndSheep.View
         public void DisplayInstructions();
         public void DisplayBoard();
         public string AskForMenuChoice();
+        public string AskForPlayerMove();
     }
 }

@@ -7,6 +7,11 @@ namespace WolfAndSheep.Model
 {
     public class Wolf : PlayerPiece
     {
+        /// <summary>
+        /// Represents a wolf player piece in the game.
+        /// Wolves can move in all four directions: NorthEast, NorthWest, 
+        /// SouthEast,SouthWest.
+        /// </summary>
         public override PlayerType Type => PlayerType.Wolf;
         public override PlayerType Colour { get; }
         protected static readonly PlayerDirection [] dir = new PlayerDirection[]

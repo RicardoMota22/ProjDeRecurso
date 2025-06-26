@@ -7,6 +7,9 @@ namespace WolfAndSheep.Model
 {
     public class BoardPosition
     {
+        /// <summary>
+        /// Represents where pieces are on the board and where they can move.
+        /// </summary>
         public int Row { get; set; }
         public int Column { get; set; }
 
@@ -45,7 +48,8 @@ namespace WolfAndSheep.Model
 
         /// <summary>
         /// Adds a PlayerDirection to a BoardPosition.
-        /// custom + operator
+        /// custom + operator reference from Programming a Chess Game in C# | 
+        /// Part 2 - Positions & Directions by OttoBotCode on YouTube.
         /// </summary>
         /// <param name="position"></param>
         /// <param name="direction"></param>
