@@ -23,8 +23,23 @@ namespace WolfAndSheep.Controller
             view.DisplayWelcomeSign();
             view.DisplayRules();
             view.DisplayInstructions();
-            view.AskForMenuChoice();
-            view.DisplayBoard();
+
+            string choice = view.AskForMenuChoice();
+            switch (choice)
+            {
+                case "1":
+                    view.DisplayMessage("Start Game");
+                    view.DisplayBoard();
+                    break;
+                case "2":
+                    view.DisplayMessage("Exit the game.");
+                    // Exit the game
+                    break; 
+                default:
+                    view.DisplayMessage("Invalid choice. Please try again.");
+                    return; // Exit if invalid choice
+            }
+
 
             while (true)
             {
@@ -39,10 +54,11 @@ namespace WolfAndSheep.Controller
                 }
 
                 // Handle player moves
-                var move = board.GetPlayerMove();
+                var move = board.ResetBoard();
+                view.AskForPlayerMove();
                 if (move != null)
                 {
-                    move.Move(board);
+                    move.ResetBoard();
                 }
                 else
                 {
