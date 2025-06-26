@@ -89,6 +89,9 @@ classDiagram
     PlayerPiece <|-- Sheep
     PlayerPiece <|-- Wolf
 
+    Sheep <|-- SheepMovement
+    Wolf <|-- WolfMovement
+
     IMovement <|.. SheepMovement
     IMovement <|.. WolfMovement
 

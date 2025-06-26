@@ -9,6 +9,7 @@ namespace WolfAndSheep.Model
     {
         /// <summary>
         /// Represents a sheep player piece in the game.
+        /// Sheep can only move in two directions: NorthEast and NorthWest.
         /// </summary>
         public override PlayerType Type => PlayerType.Sheep;
         public override PlayerType Colour { get; }

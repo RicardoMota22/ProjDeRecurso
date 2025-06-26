@@ -17,7 +17,7 @@ namespace WolfAndSheep.Model
         public BoardPosition FromPos { get; }
         public BoardPosition ToPos { get; }
 
-        public WolfMovement(BoardPosition from, BoardPosition to, PlayerType colour) : base(colour)
+        public WolfMovement(BoardPosition from, BoardPosition to, PlayerType Colour) : base(Colour)
         {
             FromPos = from;
             ToPos = to;

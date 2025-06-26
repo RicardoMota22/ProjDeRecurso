@@ -12,13 +12,13 @@ namespace WolfAndSheep.Model
     /// Uses Programming a Chess Game in C# | Part 5 by OttoBotCode 
     /// on YouTube as a reference.
     /// </summary>
-    public class SheepMovement : IMovement
+    public class SheepMovement : Sheep,IMovement
     {
 
         public BoardPosition FromPos { get; }
         public BoardPosition ToPos { get; }
 
-        public SheepMovement(BoardPosition from, BoardPosition to)
+        public SheepMovement(BoardPosition from, BoardPosition to,PlayerType colour) : base(colour)
         {
             FromPos = from;
             ToPos = to;
