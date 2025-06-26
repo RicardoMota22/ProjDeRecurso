@@ -47,7 +47,7 @@ classDiagram
     class BoardPosition {
         
     }
-    interface IMovement {
+    class IMovement {
         
     }
     class Player {
