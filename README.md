@@ -100,6 +100,9 @@ classDiagram
     BoardController ..> IView
     BoardController ..> Board
 
+    Board *-- PlayerPiece
+    Board *-- BoardPosition
+
 
 
 ```
