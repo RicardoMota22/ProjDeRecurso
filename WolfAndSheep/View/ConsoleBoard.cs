@@ -97,7 +97,7 @@ namespace WolfAndSheep.View
 
             }
             //Hides the headers of the table
-            table.HideHeaders();
+            //table.HideHeaders();
             //Renders the board
             AnsiConsole.Write(table);
         }
@@ -115,6 +115,19 @@ namespace WolfAndSheep.View
                     .Title("[bold]Select an option[/]")
                     .AddChoices(options)
             );
+        }
+        public string AskForPlayerMove()
+        {
+            Console.WriteLine("[bold yellow]Enter your move (e.g., A1, B2):[/]");
+            string input = Console.ReadLine();
+            if (input == null)
+            {
+                throw new ArgumentNullException("Input cannot be null.");
+            }
+            else
+            {
+                return "position: " + input + "is valid";
+            }
         }
     }
 }
