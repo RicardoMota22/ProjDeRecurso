@@ -29,9 +29,52 @@ Controller :
 * BoardController.cs - Controls what is displayed to the players and the gamestate
   and afterwards meant to display the game over screen.
 
+Non Trivial Algorithms:
+
 * In WolfMovement there also exists the condition that if the from position is
   equal to the to position the game is over.
 * Program.cs tries to run the project. 
+  
+
+## Mermaid Class Diagram VSCode
+
+```mermaid
+classDiagram
+    class Character {
+        # Weapon [] weapons
+        + string Name
+        + Fight()
+    }
+
+    class Player {
+        + Player(string name)
+    }
+
+    class Enemy {
+        + Enemy(string name)
+    }
+
+    class Weapon {
+        + float power
+    }
+
+    class Gun {
+        + Gun(float power, int ammo)
+        + FireGun()
+    }
+
+    class Sword {
+        + Sword(float damage, float bladeLength)
+        + AttackWithSword()
+    }
+
+    Character <|-- Player
+    Character <|-- Enemy
+    Weapon <|-- Gun
+    Weapon <|-- Sword
+    Player --> Weapon : uses
+    Enemy --> Weapon : uses
+
 
 ### References
 
