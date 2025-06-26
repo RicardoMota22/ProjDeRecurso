@@ -9,16 +9,16 @@ Ricardo Mota | a22402487
 This project was all about the game Wolf and Sheep which is in an MVC format.
 
 Model :
-    *Board -Represents the board of the game, including the borders,
+*Board -Represents the board of the game, including the borders,
             where pieces are and where they move to.
-    *BoardPosition - Checks if sqaures are valid to enter
-    *IMovement - Interface which dictates movement for the Sheep and Wolf
-    *Player - Enumerator which represents the 2 players, also intended to switch
-    the players after a turn.
-    *PlayerDirection - Where players can move on the board
-    *PlayerPiece - Represents a piece on the board, the type or colour
-    *Sheep/Wolf - What the pieces are and where they can move
-    *Sheep/WolfMovement - Implements the IMovement interface and checks if piece has been moved.
+* BoardPosition - Checks if sqaures are valid to enter
+* IMovement - Interface which dictates movement for the Sheep and Wolf
+* Player - Enumerator which represents the 2 players, also intended to switch
+the players after a turn.
+* PlayerDirection - Where players can move on the board
+* PlayerPiece - Represents a piece on the board, the type or colour
+* Sheep/Wolf - What the pieces are and where they can move
+* Sheep/WolfMovement - Implements the IMovement interface and checks if piece has been moved.
 
 
 
