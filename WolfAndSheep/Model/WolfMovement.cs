@@ -10,7 +10,8 @@ namespace WolfAndSheep.Model
         /// <summary>
         /// Represents the movement of the wolf on the board.
         /// Implements the IMovement interface.
-        /// Uses Programming a Chess Game in C# | Part 5 by OttoBotCode on YouTube as a reference.
+        /// Uses Programming a Chess Game in C# | Part 5 by OttoBotCode on 
+        /// YouTube as a reference.
         /// </summary>
 
         public BoardPosition FromPos { get; }
@@ -37,7 +38,7 @@ namespace WolfAndSheep.Model
                 
             }
             //If wolf cant move from its position to another, game is over.
-            if (FromPos.Equals(ToPos))
+            if (ToPos.Equals(FromPos))
             {
                 throw new InvalidOperationException($"Game ends.");
 

@@ -70,7 +70,7 @@ namespace WolfAndSheep.Model
             //add case where other piece is in position
             if (pieces[position.Row, position.Column] != null)
             {
-                throw new InvalidOperationException($"Piece at the specified position{position.Row},{position.Column}.");
+                return pieces[position.Row, position.Column];
             }
 
             return pieces[position.Row, position.Column];
@@ -85,7 +85,7 @@ namespace WolfAndSheep.Model
             //add case where other piece is in position
             if (pieces[position.Row, position.Column] != null)
             {
-                throw new InvalidOperationException("Piece at the specified position.");
+                pieces[position.Row, position.Column] = value;
             }
             pieces[position.Row, position.Column] = value;
         }
@@ -108,6 +108,35 @@ namespace WolfAndSheep.Model
 
             // Add wolf piece to the board
             SetPosition(new BoardPosition(0, 1), new Wolf(PlayerType.Wolf));
+        }
+        public Board ResetBoard(BoardPosition from, PlayerDirection direction,
+        PlayerPiece insert)
+        {
+            // Clear the board
+            for (int row = 0; row < 8; row++)
+            {
+                for (int column = 0; column < 8; column++)
+                {
+                    pieces[row, column] = null;
+                }
+            }
+            // Place new positions
+            AddNewPositions();
+            //Ai assistance was used to complete this method.
+        }
+
+        public IEnumerable<BoardPosition> AddNewPositions(BoardPosition from, PlayerDirection direction)
+        {
+            // Add new positions based on the direction
+            List<BoardPosition> toPositions = new List<BoardPosition>();
+            BoardPosition toPosition = from + direction;
+
+            if (toPosition.IsValid())
+            {
+                toPositions.Add(toPosition);
+            }
+
+            return toPositions;
         }
 
     }
