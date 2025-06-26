@@ -50,7 +50,7 @@ classDiagram
     class IMovement {
         
     }
-    class Player {
+    class PlayerType {
         
     }
 
@@ -102,6 +102,7 @@ classDiagram
 
     Board *-- PlayerPiece
     Board *-- BoardPosition
+    PlayerType ..> PlayerPiece
 
 
 
