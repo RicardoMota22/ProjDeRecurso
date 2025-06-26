@@ -74,6 +74,7 @@ classDiagram
     Weapon <|-- Sword
     Player --> Weapon : uses
     Enemy --> Weapon : uses
+```
 
 
 ### References
