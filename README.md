@@ -40,40 +40,49 @@ Non Trivial Algorithms:
 
 ```mermaid
 classDiagram
-    class Character {
-        # Weapon [] weapons
-        + string Name
-        + Fight()
+    class Board {
+        
     }
 
+    class BoardPosition {
+        
+    }
+    interface IMovement {
+        
+    }
     class Player {
-        + Player(string name)
+        
     }
 
-    class Enemy {
-        + Enemy(string name)
+    class PlayerDirection {
+        
     }
 
-    class Weapon {
-        + float power
+    class PlayerPiece {
+        
     }
 
-    class Gun {
-        + Gun(float power, int ammo)
-        + FireGun()
+    class Sheep {
+        
     }
 
-    class Sword {
-        + Sword(float damage, float bladeLength)
-        + AttackWithSword()
+    class SheepMovement {
+        
+    }
+    class Wolf {
+        
+    }
+    class WolfMovement {
+        
     }
 
-    Character <|-- Player
-    Character <|-- Enemy
-    Weapon <|-- Gun
-    Weapon <|-- Sword
-    Player --> Weapon : uses
-    Enemy --> Weapon : uses
+    PlayerPiece <|-- Sheep
+    PlayerPiece <|-- Wolf
+
+    IMovement <|.. SheepMovement
+    IMovement <|.. WolfMovement
+
+
 ```
 
 
